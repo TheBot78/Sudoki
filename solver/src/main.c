@@ -4,6 +4,8 @@ int main(void)
 {
     int **board = get_map();
 
+    if (!board)
+        return _EXIT_FAILURE;
     if (solve_sudoku(board))
     {
         print_board(board);
