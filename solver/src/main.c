@@ -12,20 +12,20 @@ int puzzle[9][9] = {{1, 7, 4, 0, 9, 0, 6, 0, 0},
 
 int main(void)
 {
-    // int **board = get_map();
-    int **board = malloc(BOARD_SIZE * sizeof(int *));
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        board[i] = malloc(BOARD_SIZE * sizeof(int));
-    }
+    int **board = get_map();
+    // int **board = malloc(BOARD_SIZE * sizeof(int *));
+    // for (int i = 0; i < BOARD_SIZE; i++)
+    // {
+    //     board[i] = malloc(BOARD_SIZE * sizeof(int));
+    // }
 
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        for (int j = 0; j < BOARD_SIZE; j++)
-        {
-            board[i][j] = puzzle[i][j];
-        }
-    }
+    // for (int i = 0; i < BOARD_SIZE; i++)
+    // {
+    //     for (int j = 0; j < BOARD_SIZE; j++)
+    //     {
+    //         board[i][j] = puzzle[i][j];
+    //     }
+    // }
 
     if (solve_sudoku(board))
     {
