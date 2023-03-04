@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define BOARD_SIZE 9
-#define SUBGRID_SIZE 3
+#include "generator.h"
 
 void print_board(int board[BOARD_SIZE][BOARD_SIZE])
 {
@@ -26,10 +21,10 @@ int used_in_row(int board[BOARD_SIZE][BOARD_SIZE], int row, int num)
     {
         if (board[row][col] == num)
         {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 int used_in_col(int board[BOARD_SIZE][BOARD_SIZE], int col, int num)
@@ -38,10 +33,10 @@ int used_in_col(int board[BOARD_SIZE][BOARD_SIZE], int col, int num)
     {
         if (board[row][col] == num)
         {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
 int used_in_subgrid(int board[BOARD_SIZE][BOARD_SIZE], int row, int col, int num)
@@ -54,11 +49,11 @@ int used_in_subgrid(int board[BOARD_SIZE][BOARD_SIZE], int row, int col, int num
         {
             if (board[subgrid_row + i][subgrid_col + j] == num)
             {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 int is_valid_placement(int board[BOARD_SIZE][BOARD_SIZE], int row, int col, int num)
@@ -76,11 +71,11 @@ int find_empty_cell(int board[BOARD_SIZE][BOARD_SIZE], int *row, int *col)
         {
             if (board[*row][*col] == 0)
             {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
 int solve_sudoku(int board[BOARD_SIZE][BOARD_SIZE])
@@ -91,7 +86,7 @@ int solve_sudoku(int board[BOARD_SIZE][BOARD_SIZE])
     if (!find_empty_cell(board, &row, &col))
     {
         // All cells are filled, board is solved
-        return 1;
+        return true;
     }
 
     // Try placing a number in the empty cell
@@ -104,7 +99,7 @@ int solve_sudoku(int board[BOARD_SIZE][BOARD_SIZE])
             // Recursively solve the remaining cells
             if (solve_sudoku(board))
             {
-                return 1;
+                return true;
             }
 
             // Backtrack and try a different number
@@ -112,7 +107,7 @@ int solve_sudoku(int board[BOARD_SIZE][BOARD_SIZE])
                 [row][col] = 0;
         }
     }
-    return 0;
+    return false;
 }
 
 void generate_sudoku(int board[BOARD_SIZE][BOARD_SIZE], int num_cells_to_remove)
