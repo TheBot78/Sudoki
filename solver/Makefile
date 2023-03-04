@@ -1,4 +1,5 @@
-SRC =	solver.c
+SRC =	solver.c	\
+		get_map.c	\
 
 OBJ =	$(SRC:%.c=obj/%.o)
 
