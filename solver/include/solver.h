@@ -11,5 +11,6 @@
 
 int solve_sudoku(int **board);
 void print_board(int **board);
+int **get_map(void);
 
 #endif /* !SOLVER_H_ */
