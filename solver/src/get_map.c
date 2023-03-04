@@ -133,13 +133,11 @@ int **get_map(void)
     while (getline(&line, &len, stdin) != -1 ) {
         tab = add_value(tab, line);
     }
-    print_tab(tab);
     map = convert_map(tab);
     if (map == NULL) {
         printf("ERROR\n");
         return NULL;
     }
-    print_map(map);
     free_tab(tab);
     free(line);
     return map;
