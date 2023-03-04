@@ -1,3 +1,5 @@
+#include "generator.h"
+
 int main(void) {
-    return 0;
+    return generate_sudoku();
 }

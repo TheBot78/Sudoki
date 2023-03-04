@@ -1,4 +1,5 @@
+#include "solver.h"
+
 int main(void) {
-    printf("test");
-    return 0;
+    return solve_sudoku();
 }
