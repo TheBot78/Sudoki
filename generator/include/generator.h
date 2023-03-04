@@ -1,8 +1,6 @@
 #ifndef GENERATOR_H_
 #define GENERATOR_H_
 
-#define BOARD_SIZE 9
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

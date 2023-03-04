@@ -2,6 +2,8 @@
 #define SOLVER_H_
 
 #define BOARD_SIZE 9
+#define SUBGRID_SIZE 3
+
 #define _EXIT_SUCCESS 0
 #define _EXIT_FAILURE 84
 

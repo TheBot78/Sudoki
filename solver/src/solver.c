@@ -41,9 +41,9 @@ int used_in_col(int **board, int col, int num)
 
 int used_in_subgrid(int **board, int start_row, int start_col, int num)
 {
-    for (int row = 0; row < 3; row++)
+    for (int row = 0; row < SUBGRID_SIZE; row++)
     {
-        for (int col = 0; col < 3; col++)
+        for (int col = 0; col < SUBGRID_SIZE; col++)
         {
             if (board[row + start_row][col + start_col] == num)
             {
@@ -58,7 +58,7 @@ int is_valid_placement(int **board, int row, int col, int num)
 {
     return !used_in_row(board, row, num) &&
            !used_in_col(board, col, num) &&
-           !used_in_subgrid(board, row - row % 3, col - col % 3, num);
+           !used_in_subgrid(board, row - row % SUBGRID_SIZE, col - col % SUBGRID_SIZE, num);
 }
 
 int find_unassigned_cell(int **board, int *row, int *col)
