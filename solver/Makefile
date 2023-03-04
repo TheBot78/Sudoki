@@ -1,4 +1,4 @@
-SRC =	tools.c
+SRC =	solver.c
 
 OBJ =	$(SRC:%.c=obj/%.o)
 
@@ -12,7 +12,7 @@ CFLAGS =	-Wall -Wextra
 
 CPPFLAGS =	-Iinclude
 
-NAME =	lem_in
+NAME =	solver
 
 all:	$(NAME)
 

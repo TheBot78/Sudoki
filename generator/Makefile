@@ -1,4 +1,4 @@
-SRC =	tools.c
+SRC =	generator.c
 
 OBJ =	$(SRC:%.c=obj/%.o)
 
@@ -12,7 +12,7 @@ CFLAGS =	-Wall -Wextra
 
 CPPFLAGS =	-Iinclude
 
-NAME =	lem_in
+NAME =	generator
 
 all:	$(NAME)
 
