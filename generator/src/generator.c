@@ -8,7 +8,11 @@ void print_board(int board[BOARD_SIZE][BOARD_SIZE])
         printf("|");
         for (int j = 0; j < BOARD_SIZE; j++)
         {
-            printf(" %d", board[i][j]);
+            if (board[i][j] == 0) {
+                printf("  ");
+            } else {
+                printf(" %d", board[i][j]);
+            }
         }
         printf("|\n");
     }
