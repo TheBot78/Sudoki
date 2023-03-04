@@ -102,7 +102,6 @@ static int *convert_line(char *str)
 static int **convert_map(char **tab)
 {
     int **map = malloc(sizeof(int *) * 9);
-    int *line;
     int inc = 0;
 
     if (size_tab(tab) != LIMIT_Y)
@@ -143,5 +142,5 @@ int **get_map(void)
     print_map(map);
     free_tab(tab);
     free(line);
-    return tab;
+    return map;
 }
